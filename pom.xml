@@ -47,5 +47,12 @@
       <artifactId>assertj-core</artifactId>
       <version>3.6.2</version>
     </dependency>
+      <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer -->
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-picocontainer</artifactId>
+        <version>1.2.5</version>
+        <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>

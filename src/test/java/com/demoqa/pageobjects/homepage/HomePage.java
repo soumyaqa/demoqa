@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
  * Created by New on 4/21/2017.
  */
 public class HomePage {
-    WebDriver driver;
+    private static WebDriver driver;
 
     public void setBrowser(String browser){
         driver = Drivers.getDriver(browser);
@@ -23,5 +23,9 @@ public class HomePage {
 
     public void close(){
         driver.close();
+    }
+
+    public WebDriver giveControl(){
+        return driver;
     }
 }

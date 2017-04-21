@@ -9,12 +9,11 @@ import cucumber.api.java8.En;
 import static org.assertj.core.api.Assertions.*;
 
 public class TestHomePage implements En {
-    HomePage homePage;
+    private static final HomePage homePage  = new HomePage();
 
    public TestHomePage(){
 
         Given("^I have \"([^\"]*)\" open$", (String browser) -> {
-            homePage = new HomePage();
             homePage.setBrowser(browser);
         });
 
