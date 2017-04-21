@@ -1,6 +1,5 @@
-@in-progress
 Feature: Contents of the home page tab
-  @in-progress
+
   Scenario Outline: On the Tab
     Given I'm on the homepage
     When I select <tabNumber> Tab

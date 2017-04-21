@@ -9,16 +9,17 @@ import static org.assertj.core.api.Assertions.*;
  */
 public class TestTabPage implements En{
     private static final TabPage tabPage = new TabPage();
+    HomePage homePage;
 
     public TestTabPage(){
         Given("^I'm on the homepage$", () -> {
-            HomePage homePage = new HomePage();
+            homePage = new HomePage();
             homePage.setBrowser("chrome");
             homePage.openPage();
-            tabPage.setHomePage(homePage);
         });
 
         When("^I select (\\d+) Tab$", (Integer tabNumber) -> {
+            tabPage.setHomePage(homePage);
             tabPage.selectTab(tabNumber);
         });
 
