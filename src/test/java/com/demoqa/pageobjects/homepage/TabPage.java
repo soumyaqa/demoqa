@@ -18,11 +18,14 @@ public class TabPage {
         this.tabNumber = tabNumber;
         switch (tabNumber){
             case 1:
+                //Tab 1 section in the home page
                 driver.findElement(By.id("ui-id-1")).click();
                 break;
             case 2:
+                //Tab 2 section in the home page
                 driver.findElement(By.id("ui-id-2")).click();
                 break;
+            //other tab sections won't be tested for this demo project
         }
     }
 
@@ -31,10 +34,12 @@ public class TabPage {
 
         switch (tabNumber){
             case 1:
-                title = driver.findElement(By.xpath(".//div[@id='tabs-1']/b")).getText();
+                //Title text of Tab 1 section
+                title = driver.findElement(By.cssSelector("div[id='tabs-1']>b")).getText();
                 break;
             case 2:
-                title = driver.findElement(By.xpath(".//div[@id='tabs-2']/b")).getText();
+                //Title of Tab 2 section
+                title = driver.findElement(By.cssSelector("div[id='tabs-2']>b")).getText();
                 break;
         }
 
