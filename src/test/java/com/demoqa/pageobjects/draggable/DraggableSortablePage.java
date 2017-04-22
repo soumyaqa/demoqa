@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by New on 4/21/2017.
@@ -23,12 +27,18 @@ public class DraggableSortablePage {
     public void dragAndDrop(){
         Actions builder = new Actions(driver);
         WebElement dragElement = driver.findElement(By.id("draggablebox"));
-        WebElement lastElementInList = driver.findElement(By.cssSelector("ul[id='sortablebox']:last-child"));
+        WebElement lastElementInList = driver.findElement(By.cssSelector("ul[id='sortablebox']>:last-child"));
 
         builder.dragAndDrop(dragElement, lastElementInList).build().perform();
     }
 
-    public String getLastElementInList(){
-        return driver.findElement(By.cssSelector("ul[id='sortablebox']:last-child")).getText();
+    public String getLastElementInList() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement lastElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul[id='sortablebox']>:nth-child(6)")));
+        return lastElement.getText();
+    }
+
+    public void close(){
+        driver.close();
     }
 }

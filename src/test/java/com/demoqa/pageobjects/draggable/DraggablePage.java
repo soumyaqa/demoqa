@@ -1,7 +1,7 @@
 package com.demoqa.pageobjects.draggable;
 
-import com.demoqa.pageobjects.homepage.HomePage;
-import org.openqa.selenium.By;
+import com.demoqa.utils.Constants;
+import com.demoqa.utils.Drivers;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -9,12 +9,13 @@ import org.openqa.selenium.WebDriver;
  */
 public class DraggablePage {
     WebDriver driver;
-    public void setHomePage(HomePage homePage){
-        driver = homePage.giveControl();
+
+    public void setBrowser(String browser){
+        driver = Drivers.getDriver(browser);
     }
 
     public void open(){
-        driver.findElement(By.linkText("Draggable")).click();
+        driver.get(Constants.BASE_URL + "/draggable");
     }
 
     public String getTitle(){
@@ -23,5 +24,9 @@ public class DraggablePage {
 
     public WebDriver giveControl(){
         return driver;
+    }
+
+    public void close(){
+        driver.close();
     }
 }

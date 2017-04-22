@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.*;
  */
 public class TestTabPage implements En{
     private static final TabPage tabPage = new TabPage();
-    HomePage homePage;
+    public static HomePage homePage;
 
     public TestTabPage(){
         Given("^I'm on the homepage$", () -> {
