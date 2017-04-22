@@ -2,6 +2,7 @@ package com.demoqa.steps.draggable;
 
 import com.demoqa.pageobjects.draggable.DraggablePage;
 import com.demoqa.pageobjects.draggable.DraggableSortablePage;
+import com.demoqa.utils.Log;
 import cucumber.api.java8.En;
 
 
@@ -14,6 +15,7 @@ public class DraggableSortableTest implements En {
     DraggablePage draggablePage;
     public DraggableSortableTest(){
         Given("^I'm on the draggable page$", () -> {
+            Log.info("navigate to the draggable page");
             draggablePage = new DraggablePage();
             //using  default browser chrome for testing
             draggablePage.setBrowser("chrome");
@@ -21,15 +23,18 @@ public class DraggableSortableTest implements En {
         });
 
         When("^I select 'Draggable \\+ Sortable' section$", () -> {
+            Log.info("selecting the draggable section");
             draggableSortablePage.setDraggablePage(draggablePage);
             draggableSortablePage.clickSelectableSortable();
         });
 
         When("^I drag and drop the item 'Drag me down' to the bottom of the list$", () -> {
+            Log.info("perform drag and drop");
             draggableSortablePage.dragAndDrop();
         });
 
         Then("^I should see 'Drag me down' added to the bottom of the list$", ()  -> {
+            Log.info("verify the last element in the list is 'Drag me down'");
             assertThat(draggableSortablePage.getLastElementInList()).isEqualTo("Drag me down");
             draggablePage.close();
         });
