@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
  * Created by New on 4/21/2017.
  */
 public class DraggablePage {
-    WebDriver driver;
+    private WebDriver driver;
 
     public void setBrowser(String browser){
         driver = Drivers.getDriver(browser);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
  * Created by New on 4/21/2017.
  */
 public class TabPage {
-    private static WebDriver driver;
+    private WebDriver driver;
     int tabNumber;
 
     public void setHomePage(HomePage homePage){

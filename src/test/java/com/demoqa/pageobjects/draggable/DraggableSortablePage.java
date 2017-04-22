@@ -8,13 +8,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * Created by New on 4/21/2017.
  */
 public class DraggableSortablePage {
-    WebDriver driver;
+    private WebDriver driver;
 
     public void setDraggablePage(DraggablePage draggablePage){
         driver = draggablePage.giveControl();

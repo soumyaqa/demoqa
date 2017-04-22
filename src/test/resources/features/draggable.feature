@@ -1,6 +1,6 @@
-@in-progress
+
 Feature: Draggable item
-  @in-progress
+
   Scenario: Adding an item to an existing list by drag and drop
     Given I'm on the draggable page
     When I select 'Draggable + Sortable' section
